@@ -1,3 +1,28 @@
+:root {
+    --imageBrightness:1;
+    --light-bg: white;
+    --light-bg-text: black;
+
+    --dark-bg: #00174F;
+    --dark-bg-text: white;
+  }
+    @media (prefers-color-scheme:light) {
+        :root{
+        --imageBrightness:1;
+        }
+    }
+  @media (prefers-color-scheme:dark) {
+    :root{
+      --imageBrightness:.85;
+    }
+  }
+
 body{
     background-color: pink;
 }
+
+img {
+    width: 100%;
+    height: auto;
+    filter:brightness(var(--imageBrightness, 1));  
+  }
