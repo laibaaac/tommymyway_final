@@ -1,28 +1,68 @@
 :root {
-    --imageBrightness:1;
-    --light-bg: white;
-    --light-bg-text: black;
+  --imageBrightness: 1;
+  --light-bg: white;
+  --light-bg-text: black;
 
-    --dark-bg: #00174F;
-    --dark-bg-text: white;
-  }
-    @media (prefers-color-scheme:light) {
-        :root{
-        --imageBrightness:1;
-        }
-    }
-  @media (prefers-color-scheme:dark) {
-    :root{
-      --imageBrightness:.85;
-    }
-  }
+  --dark-bg: #00174F;
+  --dark-bg-text: white;
+}
 
-body{
-    background-color: pink;
+@media (prefers-color-scheme: light) {
+  :root {
+    --imageBrightness: 1;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --imageBrightness: .85;
+  }
+}
+
+body {
+  background-color: var(--dark-bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  margin: 0;
+  text-align: center; /* Center align all text */
 }
 
 img {
-    width: 100%;
-    height: auto;
-    filter:brightness(var(--imageBrightness, 1));  
-  }
+  width: 100%;
+  height: auto;
+  filter: brightness(var(--imageBrightness)); /* Adjust brightness */
+}
+
+h1, h2 {
+  color: var(--dark-bg-text);
+  margin: 20px 0;
+  max-width: 80%;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+h1 {
+  margin-top: 20px; /* Space above h1 */
+}
+
+h2 {
+  margin-bottom: 40px; /* Additional space below h2 */
+}
+
+button {
+  background-color: #00174F;
+  color: white;
+  border: 5px solid white;
+  padding: 20px 50px;
+  font-size: 2em;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+  text-align: center;
+  outline: none;
+  font-weight: bold;
+  border-radius: 5px;
+  margin: 10px 0; /* Space between buttons */
+}
